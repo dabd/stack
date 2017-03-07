@@ -33,13 +33,10 @@ object StackModule {
     // rotate the topmost n elements so the topmost element becomes the nth from the top,
     // the second from the top becomes the top, etc.
     def rotate(n: Int): Stack[A] = {
-      if (n > items.size) this
-      else {
-        val (topmostN, rem) = items.splitAt(n)
-        topmostN match {
-          case Nil => this
-          case h :: t => Stack(t ::: List(h) ::: rem)
-        }
+      val (topmostN, rem) = items.splitAt(n)
+      topmostN match {
+        case Nil => this
+        case h :: t => Stack(t ::: List(h) ::: rem)
       }
     }
 
