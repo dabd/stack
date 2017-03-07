@@ -110,7 +110,7 @@ class StackModuleTest extends CommonSpec {
 
   "rotate n" should {
 
-    """should move up one position all the n-1 elements below the top and
+    """move up one position all the n-1 elements below the top and
         |move the top element to the bottom of the n-1 elements below it
       """.stripMargin in {
       forAll(for {
@@ -145,7 +145,7 @@ class StackModuleTest extends CommonSpec {
       }
     }
 
-    "rotate n only reorders the topmost n elements of the stack" in {
+    "only rearrange the topmost n elements of the stack" in {
       forAll(for {
         s <- genStack(Some(50))
         n <- Gen
