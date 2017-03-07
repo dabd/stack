@@ -1,9 +1,8 @@
 package stack
 
 import org.scalacheck._
-import stack.StackModule._
 
-class StackModuleTest extends CommonSpec {
+class StackTest extends CommonSpec {
 
   def genStack(maxSize: Option[Int] = None): Gen[Stack[Int]] =
     for {
@@ -158,6 +157,5 @@ class StackModuleTest extends CommonSpec {
           s2 shouldBe s3
       }
     }
-
   }
 }
