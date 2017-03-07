@@ -132,7 +132,7 @@ class StackModuleTest extends CommonSpec {
       }
     }
 
-    "rotate the topmost n elements of the stack at most the size of the stack times should return the original stack" in {
+    "rotate the topmost n elements of the stack n times should return the original stack" in {
       forAll(for {
         s <- genStack(Some(50))
         n <- Gen
