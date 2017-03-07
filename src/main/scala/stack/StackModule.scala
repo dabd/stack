@@ -8,20 +8,25 @@ object StackModule {
 
     def push(a: A): Stack[A] = Stack(a :: items)
 
-    def pop: (Option[A], Stack[A]) =
-      if (this.isEmpty) (None, Stack(Nil))
-      else (Some(items.head), Stack(items.tail))
+    def pop: (Option[A], Stack[A]) = items match {
+      case Nil => (None, Stack(Nil))
+      case h :: t => (Some(h), Stack(t))
+    }
 
-    def peek: Option[A] = if (this.isEmpty) None else Some(items.head)
+    def peek: Option[A] = items match {
+      case Nil => None
+      case h :: _ => Some(h)
+    }
 
     def isEmpty: Boolean = items.isEmpty
 
     // Extra operations
 
     // duplicate the top element
-    def duplicate: Stack[A] =
-      if (this.isEmpty) this
-      else this.push(this.peek.get)
+    def duplicate: Stack[A] = items match {
+      case Nil => this
+      case h :: t => Stack(h :: h :: t)
+    }
 
     // swap top two items
     def swap: Stack[A] = items match {
