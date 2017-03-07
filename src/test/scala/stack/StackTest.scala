@@ -8,8 +8,8 @@ class StackTest extends CommonSpec {
     for {
       items <- maxSize match {
         case None => Gen.listOf(Arbitrary.arbInt.arbitrary)
-        case Some(_) =>
-          Gen.choose(0, maxSize.get) flatMap { sz =>
+        case Some(n) =>
+          Gen.choose(0, n) flatMap { sz =>
             Gen.listOfN(sz, Arbitrary.arbInt.arbitrary)
           }
       }
