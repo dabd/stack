@@ -7,7 +7,7 @@
 
     2.2 *swap*: top two items
        
-    2.3 *rotate n*: the topmost n elements so the topmost element becomes the nth from the bottom,
+    2.3 *rotate n*: the topmost n elements so the topmost element becomes the nth from the top,
        the second from the top becomes the top, etc.
        
     2.4 *popN*: pop n elements from the stack
