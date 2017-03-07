@@ -136,7 +136,7 @@ class StackModuleTest extends CommonSpec {
       forAll(for {
         s <- genStack(Some(50))
         n <- Gen
-          .choose(0, s.items.size + 5) // make sure we test with n > stack size
+          .choose(0, s.items.size)
       } yield (s, n)) {
         case (s, n) =>
           (1 to (n min s.items.size)).foldLeft(s: Stack[Int]) {
