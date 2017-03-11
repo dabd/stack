@@ -36,10 +36,10 @@ case class Stack[A](items: List[A]) {
   // rotate the topmost n elements so the topmost element becomes the nth from the top,
   // the second from the top becomes the top, etc.
   def rotate(n: Int): Stack[A] = {
-    val (topmostN, rem) = items.splitAt(n)
+    val (topmostN, bottom) = items.splitAt(n)
     topmostN match {
       case Nil => this
-      case h :: t => Stack(t ::: List(h) ::: rem)
+      case h :: t => Stack(t ::: List(h) ::: bottom)
     }
   }
 
